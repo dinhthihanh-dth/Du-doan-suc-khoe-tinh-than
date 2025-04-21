@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>Mental Health Predictor</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <style>
+      body {
+        background-image: url('/static/css2/hinh2.webp'); /* Đường dẫn chính xác */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+      a:link, a:visited {
+        background-color: #f44336;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      a:hover, a:active {
+        background-color: red;
+      }
+
+      /* @keyframes fadeIn */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-50px); /* Di chuyển lên trên 50px để ẩn */
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0); /* Trở về vị trí ban đầu */
+        }
+      }
+
+      /* Áp dụng animation cho .intro-text */
+      .intro-text {
+        animation: fadeIn 2s ease-in-out; /* 2s là thời gian hiệu ứng chạy */
+        animation-fill-mode: forwards; /* Giữ hiệu ứng ở trạng thái cuối cùng */
+        opacity: 0; /* Hiệu ứng bắt đầu ẩn */
+        transform: translateY(-50px); /* Ẩn phần tử lên trên */
+      }
+
+      .intro-text p {
+        animation: fadeIn 3s ease-in-out; /* Áp dụng hiệu ứng cho đoạn văn với thời gian dài hơn */
+        animation-fill-mode: forwards;
+        opacity: 0; /* Hiệu ứng bắt đầu ẩn */
+        transform: translateY(-50px); /* Ẩn phần tử lên trên */
+      }
+      .row center {
+        border-radius: 10px; 
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <br><br>
+        <h2 class="intro-text" style="text-align: center;">Chào Bạn</h2>
+         <p class="intro-text" style="font-style: italic; text-align: center;">
+            Đích đến của chúng ta không phải là<br>
+            một vùng đất mới, mà là một cách nhìn mới.<br><br>
+
+            Tâm trí như chiếc la bàn xoay nhanh,
+            Mỗi nỗi lo, mỗi việc làm nặng gánh.<br>
+
+            Bạn nhìn thế giới với sắc màu sâu thẳm,
+            Nơi bóng tối nhảy múa, bí mật say đắm.<br><br>
+
+            Có lẽ không phải tâm trí u mê,
+            Mà chỉ là một tâm hồn bị bỏ lại..<br>
+            Thế gian hối hả, nhịp sống vội vã,
+            Để lại ta hụt hơi, khao khát chút bình yên..<br><br>
+
+            Hãy hít thở sâu, để lòng dịu lại,
+            Gánh nặng này chẳng hề lớn thêm.<br>
+            Không phải từ những mảnh vỡ vụn rời,
+            Mà từ ánh nhìn thấu quá nhiều phức tạp đời.<br><br>
+
+            Hãy để đôi mắt nghỉ ngơi, thôi tranh đấu,
+            Ánh sáng dịu dàng vẫn mang vẻ đẹp riêng.<br>
+            Một tâm trí mở rộng, luôn suy tư,
+            Không phải là gánh nặng, mà là nơi để sẻ chia.<br><br>
+
+            Hãy để những ý nghĩ dịu dàng như lời thì thầm,
+            Xua tan những xao động trong tâm trí.<br>
+            Bạn không hề yếu đuối, chỉ cần nghỉ ngơi,
+            Tâm hồn mỏi mệt xứng đáng nhận điều tốt đẹp nhất.<br><br>
+        </p>
+
+        <div class="row center" style="text-align: center;">
+          <a href="/" style="border-radius: 10px;">Trang chủ</a>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>

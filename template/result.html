@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <title>Kết quả dự đoán sức khỏe tâm thần</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <style>
+        body {
+            background-image: url('/static/css2/hinh4.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+
+        .result-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            margin-top: 50px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .result-header {
+            font-weight: bold;
+            font-size: 45px;
+            margin-bottom: 20px;
+            color: #1387fc; /* Màu xanh đậm */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .result-message {
+            font-size: 18px;
+            font-weight: 300;
+            color: #1c23e8;
+            margin-bottom: 20px;
+        }
+
+        .result-btn {
+            display: inline-block;
+            background-color: #1c23e8;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 25px;
+            padding: 10px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .result-btn:hover {
+            background-color: #6740f5;
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .action-buttons a {
+            display: inline-block;
+            background-color: #1c23e8;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 25px;
+            padding: 10px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .action-buttons a:hover {
+            background-color: #6740f5;
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container result-container">
+        <h1 class="result-header center">Kết quả dự đoán</h1>
+
+        <div class="row center">
+            <h6 id="resultOutput" class="result-message col s12">{{ pred }}</h6>
+        </div>
+
+        <div class="action-buttons">
+            <a href="/" class="result-btn">Quay lại trang chủ</a>
+            <a href="/next_page" class="result-btn">Tiếp tục</a>
+            <a href="/history" class="result-btn">Lịch sử dự đoán</a>
+        </div>
+    </div>
+</body>
+</html>

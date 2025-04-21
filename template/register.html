@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #8475a7, #acb6e5);
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+        }
+
+        .register-container {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .input-field {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-field i {
+            position: absolute;
+            top: 50%;
+            left: 12px;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #555;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 85%;
+            padding: 12px 15px 12px 40px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #5c6bc0;
+            box-shadow: 0 0 4px rgba(92, 107, 192, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #5c6bc0, #3949ab);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #3949ab, #5c6bc0);
+            transform: translateY(-2px);
+        }
+
+        a {
+            display: block;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #3949ab;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #5c6bc0;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2>Đăng ký tài khoản</h2>
+        <form action="/register" method="post">
+            <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input type="text" name="username" id="username" placeholder="Họ và tên" required>
+            </div>
+
+            <div class="input-field">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+            </div>
+
+            <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" id="password" placeholder="Mật khẩu" required>
+            </div>
+
+            <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="Xác nhận mật khẩu" required>
+            </div>
+
+            <button type="submit">Đăng ký</button>
+        </form>
+        <a href="/login">Bạn đã có tài khoản? Đăng nhập</a>
+    </div>
+</body>
+</html>

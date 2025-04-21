@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        /* Tổng thể */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6a11cb, #091b38);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            color: #fff;
+        }
+
+        /* Container */
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Tiêu đề */
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #f7f2f3;
+        }
+
+        /* Nút */
+        .btn {
+            display: block;
+            width: 250px;
+            padding: 15px;
+            text-align: center;
+            margin: 10px auto;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hiệu ứng khi hover */
+        .btn:hover {
+            background-color: #fff;
+            color: #6a11cb;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Trang Tổng Quan</h1>
+        <a href="{{ url_for('predict') }}" class="btn">Dự Đoán Ngay</a>
+        <a href="{{ url_for('history') }}" class="btn">Lịch Sử Dự Đoán</a>
+        <a href="{{ url_for('home') }}" class="btn">Về Trang Chủ</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Mental Health Predictor</title>
+
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <style>
+        body {
+            background-image: url('/static/css2/hinh4.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            margin-top: 50px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .input-field label {
+            background-color: #185f9e;
+            color: white;
+            padding: 2px 10px;
+            border-radius: 5px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .input-field label:hover {
+            transform: scale(1.1);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .browser-default {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 14px;
+            background-color: #fff;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .browser-default:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-large {
+            background-color: #1c23e8;
+            color: white;
+            font-size: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-large:hover {
+            background-color: #6740f5;
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 45px;
+            margin-bottom: 20px;
+            color: #1387fc; /* Màu xanh đậm */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .center h5 {
+            font-size: 18px;
+            font-weight: 300;
+            color: #1c23e8;
+        }
+
+        .row {
+            margin-bottom: 20px;
+            color: #1c23e8;
+        }
+
+        .row.center button {
+            color: white; 
+            font-size: 18px; 
+            font-weight: bold; 
+            border-radius: 25px; 
+            padding: 1px 30px; 
+            transition: all 0.3s ease; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .row.center button:hover {
+            transform: scale(1.05); 
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); 
+        }
+
+        .row.center h6 {
+            font-size: 16px; 
+            color: #1c23e8; 
+            font-weight: 500; 
+            margin-top: 20px; 
+            background-color: rgba(255, 255, 255, 0.8); 
+            padding: 10px 15px; 
+            border-radius: 10px; 
+            display: inline-block; 
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); 
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container form-container">
+        <h1 class="header center">Dự Đoán Sức Khỏe Tâm Thần</h1>
+        <div class="row center">
+            <h5 class="header col s12 light">Hãy trả lời những câu hỏi dưới đây</h5>
+        </div>
+
+        <div class="row">
+          <form action="/predict" method="post">
+                <div class="row">
+                    <!-- Age -->
+                    <div class="input-field col s4">
+                        <label for="age"><b>Tuổi</b></label>
+                        <br />
+                        <select id="age" name="age" class="browser-default">
+                            <option value="">Chọn nhóm tuổi của bạn</option>
+                            <option value="0">0-20</option>
+                            <option value="1">21-30</option>
+                            <option value="2">31-65</option>
+                            <option value="3">66-100</option>
+                        </select>
+                    </div>
+
+                    <!-- Gender -->
+                    <div class="input-field col s4">
+                        <label for="Gender"><b>Giới tính</b></label>
+                        <br />
+                        <select id="Gender" name="gender" class="browser-default">
+                            <option value="">Chọn nhóm giới tính của bạn</option>
+                            <option value="0">Nam</option>                                 
+                            <option value="1">Nữ</option>
+                            <option value="2">Giới tính khác</option>
+                        </select>
+                    </div>
+
+                    <!-- Family History -->
+                    <div class="input-field col s4">
+                        <label for="Family_history"><b>Lịch sử gia đình</b></label>
+                        <br />
+                        <select id="Family_history" name="family_history" class="browser-default">
+                            <option value="">Trong gia đình bạn có ai mắc bệnh không ?</option>
+                            <option value="0">Không</option>
+                            <option value="1">Có</option>
+                        </select>
+                    </div>
+
+                    <!-- Benefits -->
+                    <div class="input-field col s4">
+                        <label for="benefits"><b>Lợi ích</b></label>
+                        <br />
+                        <select id="benefits" name="benefits" class="browser-default">
+                            <option value="">Công ty có cung cấp lợi ích liên quan đến sức khỏe tâm thần không ?</option>
+                            <option value="0">Không biết</option>
+                            <option value="1">không</option>
+                            <option value="2">Có</option>
+                        </select>
+                    </div>
+
+                    <!-- Care Options -->
+                    <div class="input-field col s4">
+                        <label for="care_options"><b>Lựa chọn chăm sóc</b></label>
+                        <br />
+                        <select id="care_options" name="care_options" class="browser-default">
+                            <option value="">Công ty có cung cấp các lựa chọn chăm sóc sức khỏe tâm thần không ?</option>
+                            <option value="0">Không</option>
+                            <option value="1">Không chắc chắn</option>
+                            <option value="2">Có</option>
+                        </select>
+                    </div>
+
+                    <!-- Anonymity -->
+                    <div class="input-field col s4">
+                        <label for="anonymity"><b>Bảo mật thông tin</b></label>
+                        <br />
+                        <select id="anonymity" name="anonymity" class="browser-default">
+                            <option value="">Khi tìm kiếm hỗ trợ tâm lý, thông tin của bạn có được giữ bí mật không ?</option>
+                            <option value="0">Không biết</option>
+                            <option value="1">không</option>
+                            <option value="2">Có</option>
+                        </select>
+                    </div>
+
+                    <!-- Observed Consequence -->
+                    <div class="input-field col s4">
+                        <label for="obs_consequence"><b>Hậu quả sau quan sát</b></label>
+                        <br />
+                        <select id="obs_consequence" name="obs_consequence" class="browser-default">
+                            <option value="">Bạn có từng chứng kiến hậu quả nào liên quan đến người mắc bệnh tâm thần không ?</option>
+                            <option value="0">Không</option>
+                            <option value="1">Có</option>
+                        </select>
+                    </div>
+
+                    <!-- Work Interference -->
+                    <div class="input-field col s4">
+                        <label for="work_interfere"><b>Ảnh hưởng công việc</b></label>
+                        <br />
+                        <select id="work_interfere" name="work_interfere" class="browser-default">
+                            <option value="">Các vấn đề về tâm lý có ảnh hưởng đến công việc của bạn như thế nào ?</option>
+                            <option value="0">Không biết</option>
+                            <option value="1">Không bao giờ</option>
+                            <option value="2">Thường xuyên</option>
+                            <option value="3">Hiếm khi</option>
+                            <option value="4">Thi thoảng</option>
+                        </select>
+                    </div>
+
+                    <!-- Wellness Program -->
+                    <div class="input-field col s4">
+                        <label for="wellness_program"><b>Chương trình chăm sóc sức khỏe</b></label>
+                        <br />
+                        <select id="wellness_program" name="wellness_program" class="browser-default">
+                            <option value="">Công ty của bạn có chương trình hỗ trợ nâng cao sức khỏe không ?</option>
+                            <option value="0">Không biết</option>
+                            <option value="1">Không</option>
+                            <option value="2">Có</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row center">
+                  <button type="submit" class="btn-large waves-effect waves-light orange">Dự đoán ngay</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
